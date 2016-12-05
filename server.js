@@ -45,6 +45,7 @@ app.get('/', function(req,res) {
 app.post('/search', function(req, res) {
    	//console.log(req.body);
    	var searchTarget = req.body[0].value;
+   	successful_return = [];
 
    	// Set up query to search through recipe names
    	// and ingredients looking for something like
@@ -59,24 +60,24 @@ app.post('/search', function(req, res) {
 		res.status(500).send("Error fetching recipes: " + err);
     } else {
         //console.log("rows: ", rows);
-        successful_return = [];
         rows.forEach(function(row) {
-        successful_return.push({
-            value: row.recipe_name,
-        
-        });
+	        successful_return.push({
+	            value: row.recipe_name        
+	        });
       	});
 
       	console.log("== successful_return", successful_return);
 
       	res.render('index-page', {
-			title: "Search Results",
+			title: "Results",
 			success: successful_return
     	});
    		//res.status(200).send(successful_return);
 
+
       }
  	});
+ 	//console.log("== successful_return", successful_return);
    	console.log("You sent the name " + req.body[0].name + " and the address " + req.body[0].value);
     //res.send("ok");
 });
