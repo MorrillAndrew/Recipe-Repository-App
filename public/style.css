@@ -290,7 +290,7 @@ footer{
   margin: 0px;
   border: 0px;
 }
-.recipe-title label{
+.recipe-title {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -685,4 +685,35 @@ nav {
   position: relative;
   top: 180px;
   left: 500px;
+}
+
+.addButton
+{
+  margin: 2px;
+  padding: 2px 4px;
+  background-color: rgba(0, 117, 51, 1);
+  border-radius: 6px;
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none; 
+  -khtml-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+
+}
+.addButton:hover
+{ 
+  cursor: pointer;
+  background-color: green;
+}
+#addRecipe-modal 
+{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  display: none;
+  overflow: auto;
 }
